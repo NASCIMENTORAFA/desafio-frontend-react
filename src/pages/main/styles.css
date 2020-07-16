@@ -1,0 +1,12 @@
+.ListImage {
+    max-width: 70px;
+    margin: 20px auto 0;
+    padding: 0 20px;
+    
+    
+}
+
+.ListImage article {
+
+    color: blue;
+}
