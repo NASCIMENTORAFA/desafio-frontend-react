@@ -2,6 +2,9 @@ import React, { Component } from "react";
 import api from '../../services/api';
 import "./styles.css";
 
+const urlimage = `https://api.nasa.gov/EPIC/archive/natural/2020/08/06/png/`;
+const key = `i9MXfDgZBAT1WOowUnibG41WydbMHeVWeAcchH0d`;
+
 
 export default class Main extends Component {
 
@@ -25,6 +28,8 @@ export default class Main extends Component {
 
     };
 
+    
+
     render() {
       //  return <h1>Contagem de imagem: {this.state.data.length} </h1>;
 
@@ -38,7 +43,15 @@ export default class Main extends Component {
                      <p><strong>Image: {list.image}</strong></p>
                      <p><strong>Data: 2020-05-22{list.data}</strong></p>
                     
-                     <a href= {'https://api.nasa.gov/EPIC/archive/natural/2020/05/22/png/epic_1b_20200522002713.png?api_key=i9MXfDgZBAT1WOowUnibG41WydbMHeVWeAcchH0d'} >Acessar</a>                    
+                    
+                       <img src={`${urlimage}${list.image}.png?api_key=${key}`}
+                         width="700"
+                         alt={list.image}
+                       />
+                   
+                     
+                     <p></p>
+                     <button href= {'https://api.nasa.gov/EPIC/archive/natural/2020/05/22/png/epic_1b_20200522002713.png?api_key=i9MXfDgZBAT1WOowUnibG41WydbMHeVWeAcchH0d'} >Acessar</button>                    
                      <p></p>
                    </article>
                ))}
@@ -46,41 +59,3 @@ export default class Main extends Component {
        )
     }
 }
-
-
-
-/*class Main extends Component {
-
-    state = {
-      listImage: [],
-    }
-  
-    async componentDidMount(){
-      const response = await api.get('/images?api_key=i9MXfDgZBAT1WOowUnibG41WydbMHeVWeAcchH0d');
-      //console.log(response.data);
-      this.setState({listImage: response.data});
-    }
-  
-    render(){
-  
-        const {listImage} = this.state;
-  
-        console.log(listImage);
-  
-      return(
-        <div>          
-            <ul>
-                {listImage.map(listImage => (
-                <li key={listImage.identifier}>
-                    <h2>Imagem: {listImage.image}</h2>
-                    <h2>Coordenadas: {listImage.centroid}</h2>
-                </li>
-                ))}
-            </ul>
-        </div>
-      );
-    };
-  
-  };
-
-  export default Main;*/
