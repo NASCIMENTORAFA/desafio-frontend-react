@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import api from '../../services/api';
 import "./styles.css";
 
-const urlimage = `https://api.nasa.gov/EPIC/archive/natural/2020/10/31/png/`;
+const urlimage = `https://api.nasa.gov/EPIC/archive/natural/2020/11/06/png/`;
 const key = `i9MXfDgZBAT1WOowUnibG41WydbMHeVWeAcchH0d`;
 
 
